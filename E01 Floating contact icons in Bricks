@@ -1,0 +1,25 @@
+Add this code under Bricks - Settings - Custom Code - Header Scripts 
+And this is the link to the video: 
+
+***
+
+<script>
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+		var prevScrollpos = window.pageYOffset;
+		window.onscroll = function() {
+  		var currentScrollPos = window.pageYOffset;
+  		if (prevScrollpos > currentScrollPos) {
+    		document.getElementById("floating-icons").style.top = "100%";
+  			} else {
+    		document.getElementById("floating-icons").style.top = "110%";
+  }
+  prevScrollpos = currentScrollPos;
+}
+  } else { }
+}
+
+var x = window.matchMedia("(max-width: 478px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes  
+</script>
